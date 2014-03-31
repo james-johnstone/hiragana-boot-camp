@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="hiraganaApp">
+<head>
+    <meta charset="utf-8" />
+    <title>Hiragana App!</title>    
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="../node_modules/twitter-bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
+    <style>
+        body {
+            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <ul class="nav navbar-nav">
+                    <!--<li class="dropdown-open">
+                        <a href="#" class="dropdown-toggle" data-toggle="Project Name">Project Name</a>
+                    </li>-->
+
+                </ul>
+
+            </div>
+        </div>
+
+        <div ng-controller="EventController">
+
+            <div class="row">
+                <div class="spann11">
+                    <h2>{{event.name}}</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span3">
+                </div>
+            </div>
+
+            <div ng-controller="HiraganaController">
+
+                <div class="row">
+                <div class="navbar">
+
+                    <ul class="nav kana-title">
+
+                        <li ng:repeat="hiragana in hiraganas" class="col-xs-1"><strong><h2>{{hiragana.group}}</h2></strong> </li>
+                    </ul>
+
+                </div>
+
+                <div ng:repeat="hiragana in hiraganas" class="col-xs-1">
+                    <div class="group-colum ">                       
+                            <div ng:repeat="data in hiragana.data">
+                                <div class="flip-container">
+
+                                    <div class="flipper">
+                                        <div class="front">
+                                            {{data.kana}}
+                                        </div>
+                                        <div class="back">
+                                            {{data.english}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="lib/jquery.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/EventController.js"></script>
+    <script src="js/controllers/HiraganaController.js"></script>
+</body>
+</html>
