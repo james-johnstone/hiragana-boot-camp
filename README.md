@@ -1,3 +1,11 @@
+you will need the following node modules installed:
+
+jquery
+karma
+karma-chrome-launcher
+karma-jasmine
+twitter-bootstrap
+
 # angular-seed — the seed for AngularJS apps
 
 This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
